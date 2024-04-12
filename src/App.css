@@ -29,7 +29,7 @@ body {
   display: flex;
   flex-direction: column;
   row-gap: 6px;
-  padding-top: 107%
+  padding-top: 69%;
   
 }
 
@@ -94,8 +94,24 @@ border: none;
   margin: 0;
   display: flex;
   flex-direction: column;
-  row-gap: 3%;
+  row-gap: 2%;
   padding: 9%;
   height: 80vh;
 
 }
+
+.App .formBox .signUpForm h1{
+  margin: 0;
+}
+.App .formBox .signUpForm span{
+ display: flex;
+ flex-direction: column;
+ 
+}
+
+.App .formBox .signUpForm .head-text{
+  font-size: smaller;
+  margin-bottom: -3%;
+  padding: 1%;
+}
+

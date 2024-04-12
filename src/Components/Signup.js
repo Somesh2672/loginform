@@ -34,24 +34,35 @@ const Signup = () => {
        <form className="signUpForm" onSubmit={handleSubmit}>
       <h1>Create your PopX account</h1>
       <label>
-        Full Name:
+       <span>
+        <span className="head-text">Full Name:</span>
         <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
+       </span> 
       </label>
       <label>
-        Phone Number:
+       <span>
+       <span className="head-text">Phone Number:</span>
         <input type="text" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} required />
+       </span> 
       </label>
       <label>
-        Email Address:
-        <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        <span>
+        <span className="head-text">Email Address:</span>
+            <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </span>
       </label>
       <label>
-        Password:
-        <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required />
+       <span>
+       <span className="head-text">Password:</span>
+
+            <input type="text" value={password} onChange={(e) => setPassword(e.target.value)} required />
+       </span>
       </label>
       <label>
-        Company:
+         <span>
+         <span className="head-text">Company: </span>
         <input type="text" value={company} onChange={(e) => setCompany(e.target.value)} required />
+         </span>
       </label>
       <div>
         <h3>Are you a company?</h3>
