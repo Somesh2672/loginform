@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
+.root{
+--color: #80868b;
+--active-color: #1a73e8;
+--error-color: #f44336;
+--input-value-color: #202124;
+--border-color: 1px solid #dadce0;
+
+--border-color-active: 2px solid $active-color;
+--default-background: #fff;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -95,7 +107,7 @@ border: none;
   display: flex;
   flex-direction: column;
   row-gap: 2%;
-  padding: 9%;
+  padding: 5%;
   height: 80vh;
 
 }
@@ -109,9 +121,284 @@ border: none;
  
 }
 
-.App .formBox .signUpForm .head-text{
-  font-size: smaller;
-  margin-bottom: -3%;
-  padding: 1%;
+
+.App .formBox .signUpForm .input {
+  position: relative;
+}
+
+.input-box.active-grey {
+  .input-1 {
+    border: --border-color;
+  }
+  .input-label {
+    color: --color;
+    top: -8px;
+    background: --default-background;
+    font-size: 11px;
+
+    transition: 250ms;
+
+    svg {
+      position: relative;
+      width: 11px;
+      height: 11px;
+      top: 2px;
+      transition: 250ms;
+      background-color: white;
+    }
+  }
+}
+.input-box {
+  position: relative;
+  margin: 0;
+  .input-label {
+    position: relative;
+    color: #6C25FF;
+    font-size: 11px;
+    font-weight: 400;
+    max-width: calc(100% - (2 * 8px));
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    left: 12px;
+    top: 6px;
+    padding: 0 8px;
+    transition: 250ms;
+    user-select: none;
+    pointer-events: none;
+    background-color: white;
+    svg {
+      position: relative;
+      width: 15px;
+      height: 15px;
+      top: 2px;
+      transition: 250ms;
+    }
+  }
+  .input-1 {
+    box-sizing: border-box;
+    border: 1px solid #CBCBCB;
+    height: 30px;
+    width: 100%;
+    border-radius: 7px;
+    color: --input-value-color;
+    border: --border-color;
+    padding: 12px 13px;
+
+    transition: 250ms;
+    &:focus {
+      outline: none;
+      border: 2px solid #1a73e8;
+      transition: 250ms;
+    }
+  }
+}
+.input-box.error {
+  .input-label {
+    color: --error-color;
+    top: -8px;
+    background: --default-background;
+    font-size: 11px;
+    transition: 250ms;
+  }
+  .input-1 {
+    border: 2px solid --error-color;
+  }
+}
+.input-box.focus,
+.input-box.active .input-label {
+  
+    color: --active-color;
+    top: -8px;
+    background: --default-background;
+    font-size: 11px;
+
+    transition: 250ms;
+  }
+
+
+  .input-box.active .input-label svg{
+    position: relative;
+    width: 11px;
+    height: 11px;
+    top: 2px;
+    transition: 250ms;
+  }
+.input-box.active {
+  .input-1 {
+    border: 2px solid #1a73e8;
+  }
+}
+
+
+.formBox .signUpForm .radio-button{
+  margin: 0;
+  padding: 0;
+}
+
+.formBox .signUpForm .radio-button h3{
+  margin: 0;
+  padding: 0;
+}
+.formBox .signup{
+ 
+width: 100%;
+margin-top: 31px;
+height: 33px;
+
+/* UI Properties */
+background: #6C25FF 0% 0% no-repeat padding-box;
+border-radius: 6px;
+opacity: 1;
+color: white;
+border: none;
+}
+
+.App .loginForm p{
+  top: 123px;
+left: 20px;
+width: 232px;
+height: 41px;
+/* UI Properties */
+text-align: left;
+font: normal normal normal 18px/26px Rubik;
+letter-spacing: 0px;
+color: #1D2226;
+opacity: 0.6;
+}
+.App .loginForm .login{
+  top: 669px;
+  left: 20px;
+  width: 100%;
+  height: 39px;
+  /* UI Properties */
+  background: #6C25FF 0% 0% no-repeat padding-box;
+  border-radius: 6px;
+  opacity: 1;
+  color: white;
+  border: none;
+  margin-top: 5%;
+}
+
+
+.App .profile .acc{
+  margin: 5% 0%;
+  padding: 3%;
+  border: 2px solid #fffdfb;
+  display: block;
+  background: #fffdfb;
+}
+
+.App .profile .acc h4{
+  margin: 5% 0;
+  padding: 0;
+  background-color: #fffdfb;
+}
+
+.App .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+     margin: -6px;
+    padding: 7px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  overflow: hidden;
+  position: relative;
+}
+
+.App .navbar button{
+  height: 22px;
+  color: white;
+  background: #6C25FF4B;
+  border: none;
+  border-radius: 5px;
+
+}
+
+
+.App .user-pro{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5%;
+}
+
+.App .loremi{
+  margin: 5%;
+  text-align: justify;
+}
+
+.App .user-pro PiUserFocusThin{
+  height: 50%;
+}
+/* .App .formBox .signUpForm .input .input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: pink;
+    white-space: nowrap;
+    transform: translate(0, 0);
+    transform-origin: 0 0;
+    background: var(--color-background);
+    transition: transform 120ms ease-in;
+    font-size: smaller;
+    line-height: 1.2;
+    color: #6C25FF;
+  } */
+  /* .App .formBox .signUpForm .input .input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 1px solid currentColor;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+  }
+   */
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones.. */
+   .App .formBox .signUpForm .head-text, .App .formBox .signUpForm h1 {
+    text-align: center;
+    font-weight: bold;
+  }
+  .App .formBox .signUpForm {
+    width: 95%;
+    margin: auto;
+    height: 90vh;
+  }
+
+/* The "Submit" button */
+.App .formBox .submitBtn {
+  background-color: #4CAF50;  
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+/* Styles for an invalid/pre  -filled field */
+.App .formBox .signUpForm .invalid {
+  background-color: #ffdddd;
+}
+
+/* A green text color means valid input */
+.App .formBox .signUpForm  .valid {
+  color: green;
+}
+/* When the mouse hover over the "Submit" button, change values of the color and text decoration */
+.App .formBox .submitBtn:hover {background-color: #45a049;}
+.App .formBox .submitBtn:focus{outline:none;}
+.App .formBox .submitBtn:active {
+  /* When the user is clicking on the submit button */
+  background-color: #3e8e41;
+  transform: translateY(4);
+}
+
 }
 

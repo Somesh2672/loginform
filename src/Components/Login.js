@@ -21,18 +21,19 @@ const Login = () => {
   };
 
   return (
-    <form  onSubmit={handleSubmit}>
+    <form className="loginForm" onSubmit={handleSubmit}>
       <h1>Sign in to your PopX account</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
-      <label>
-        Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-      </label>
-      <label>
-        Password:
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-      </label>
-      <button type="submit">Login</button>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div className="input-box">
+            <label className="input-label">Email Address:</label>
+            <input placeholder="Enter your email" className="input-1" type="text" value={email} onfocus="setFocus(true)" onblur="setFocus(false)" onChange={(e) => setEmail(e.target.value)} required />     
+      </div>
+      <div className="input-box">
+            <label className="input-label">Password:</label>
+            <input placeholder="Enter Password" className="input-1" type="text" value={password} onfocus="setFocus(true)" onblur="setFocus(false)" onChange={(e) => setPassword(e.target.value)} required />  
+                
+      </div>
+      <button className="login" type="submit">Login</button>
     </form>
   );
 };
